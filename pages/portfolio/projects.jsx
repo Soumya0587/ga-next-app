@@ -22,7 +22,7 @@ const Projects = ({projects}) => {
     </div>
   )
 }
-export  async function getServerSideProps(context){
+export  async function getStaticProps(context){
     let r= await fetch(`https://api.github.com/search/repositories?q=user:riteshf+stars:%3E1+language:all?sort:interactions-desc`)
     let d=await r.json()
     let items= await d.items
