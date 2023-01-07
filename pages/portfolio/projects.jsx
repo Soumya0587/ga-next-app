@@ -2,7 +2,7 @@ import Link from 'next/link';
 import React from 'react'
 
 const Projects = ({projects}) => {
-    console.log(projects);
+    // console.log(projects);
   return (
     <div style={{display:"grid",gridTemplateColumns:"repeat(2,1fr)"}}>
         {projects.map((el)=>{
@@ -22,7 +22,7 @@ const Projects = ({projects}) => {
     </div>
   )
 }
-export  async function getStaticProps(context){
+export  async function getServerSideProps(context){
     let r= await fetch(`https://api.github.com/search/repositories?q=user:riteshf+stars:%3E1+language:all?sort:interactions-desc`)
     let d=await r.json()
     let items= await d.items
