@@ -22,7 +22,7 @@ const Projects = ({ projects }) => {
     </div>
   );
 };
-export async function getServerSideProps() {
+export async function getStaticProps() {
   let r = await fetch(
     `https://api.github.com/search/repositories?q=user:riteshf+stars:%3E1+language:all?sort:interactions-desc`
   );

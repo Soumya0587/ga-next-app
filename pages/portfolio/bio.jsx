@@ -10,7 +10,7 @@ const Bio = ({ data }) => {
     </div>
   );
 };
-export async function getStaticProps(context) {
+export async function getStaticProps() {
   const res = await fetch("https://api.github.com/users/riteshf");
   const data = await res.json();
 
